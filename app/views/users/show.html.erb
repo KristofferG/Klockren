@@ -1,0 +1,24 @@
+
+<p>
+  <strong>Förnman:</strong>
+  <%= @user.firstName %>
+</p>
+
+<p>
+  <strong>Efternman:</strong>
+  <%= @user.lastName %>
+</p>
+<p>
+  <strong>Initialer:</strong>
+  <%= @user.inital %>
+</p>
+<p>
+  <strong>Färg:</strong>
+  <%= @user.color %>
+</p>
+
+
+<%= link_to 'Tillbaka', users_path %> - <%= link_to 'Edit', edit_user_path(@user) %> -
+<%= link_to 'Destroy', user_path(@user),
+              method: :delete,
+              data: { confirm: 'Är du säker?' } %>

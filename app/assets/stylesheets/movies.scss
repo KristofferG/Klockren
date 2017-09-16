@@ -1,0 +1,57 @@
+// Place all the styles related to the Movies controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+.movie-wrappertest {
+  > .col,
+  > [class^="col-"] {
+    padding-top: .75rem;
+    padding-bottom: .75rem;
+    background-color: rgba(86,61,124,.15);
+    border: 1px solid rgba(86,61,124,.2);
+  }
+}
+
+.movie-wrapper {
+    /* width: 500px; */
+    border: 1px solid lightgrey;
+    border-radius: 6px;
+    overflow: hidden; /* will contain if #first is longer than #second */
+}
+.movie-poster {
+    /* width: 160px; */
+    /* height: 200px; */
+    float:left; /* add this */
+    border: 0px solid red;
+}
+.movie-title {
+    border: 1px solid green;
+    overflow: hidden; /* if you don't want #second to wrap below #first */
+}
+
+.movie-image {
+    border-radius: 5px;
+}
+
+.list-item {
+    font-size: 70%;
+    /* font-weight: bold; */
+}
+
+.list-item-plot {
+    font-size: 70%;
+    overflow: hidden;
+    /* font-weight: bold; */
+}
+
+.create-project {
+  font-weight: normal;
+  padding-right: 20px;
+
+  input {
+    margin: 5px 5px 0px 5px;
+  }
+
+  label {
+    margin-right: 20px;
+  }
+}

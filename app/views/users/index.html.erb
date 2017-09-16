@@ -1,0 +1,21 @@
+
+<h1>Alla användare</h1>
+
+<%= link_to 'Lägg till användare', new_user_path %>
+
+<table>
+  <tr>
+    <th>Förnamn</th>
+    <th>Efternamn</th>
+    <th>färg</th>
+  </tr>
+
+  <% @users.each do |user| %>
+    <tr>
+      <td><%= user.firstName %></td>
+      <td><%= user.lastName %></td>
+      <td><%= user.color %></td>
+      <td><%= link_to 'Visa', user_path(user) %></td>
+    </tr>
+  <% end %>
+</table>

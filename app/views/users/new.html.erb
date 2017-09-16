@@ -1,0 +1,29 @@
+<h1>Lägg till användare</h1>
+
+
+
+<%= form_for :user, url: users_path do |f| %>
+
+
+
+  <p>
+    <%= f.label :Förnman %><br>
+    <%= f.text_field :firstName %>
+  </p>
+
+  <p>
+    <%= f.label :Efternamn %><br>
+    <%= f.text_field :lastName %>
+  </p>
+
+  <p>
+    <%= f.label :Färg %><br>
+    <%= f.text_field :color %>
+  </p>
+
+  <p>
+    <%= f.submit %>
+  </p>
+<% end %>
+
+<%= link_to 'Tillbaka', users_path %>

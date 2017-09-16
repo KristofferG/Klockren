@@ -1,0 +1,36 @@
+<h3 class="mt-4 mb-4">
+  Lägg till en klockren trea
+</h3>
+
+<% flash.each do |name, msg| %>
+    <%= content_tag :div, msg, class: "alert alert-info" %>
+  <% end %>
+<div class="form-group">
+  <%= form_for :movie, url: movies_path do |f| %>
+
+
+
+    <p>
+      <%= f.label :Titel, class: 'mb-1' %><br>
+      <%= f.text_field :title, placeholder: "Fast & Furious 4", class: 'form-control' %>
+    </p>
+
+    <p>
+      <%= f.label :Kommentar, class: 'mb-1' %><br>
+      <%= f.text_field :comment, placeholder: "Perfekt för en bakisdag", class: 'form-control' %>
+    </p>
+    <p>
+      <%= f.label :Rekomenderat_av, class: 'control-label form-check' %>
+
+        <%= f.collection_radio_buttons :user, User.all, :inital, :firstName, class: 'form-check-input' %>
+    </p>
+
+
+    <p>
+      <div class="actions form-group">
+          <%= link_to 'Tillbaka', movies_path, class: 'btn btn-secondary mr-3' %><%= f.submit "Lägg till film", class: 'btn btn-primary'%>
+      </div>
+    </p>
+  <% end %>
+
+</div>

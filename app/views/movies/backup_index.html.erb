@@ -1,0 +1,34 @@
+
+<h1>Klockrena treor</h1>
+
+<%= link_to 'Lägg till film', new_movie_path %>
+
+<table>
+  <tr>
+    <th>Titel</th>
+    <th>år</th>
+    <th>Längd</th>
+    <th>Plot</th>
+    <th>Skådisar</th>
+  </tr>
+
+  <% @movies.each do |movie| %>
+    <tr>
+      <td><%= movie.title %></td>
+      <td><%= movie.year %></td>
+      <td><%= movie.runtime %></td>
+      <td><%= movie.plot %></td>
+      <td><%= movie.actors %></td>
+      <td><b><%= movie.imdb %></b></td>
+      <td><%= movie.metascore %></td>
+      <td>
+        <% if (movie.poster) %>
+          <img src="<%= movie.poster %>" width="120"/>
+        <% else %>
+          empty
+        <% end %>
+        </td>
+      <td><%= link_to 'Show', movie_path(movie) %></td>
+    </tr>
+  <% end %>
+</table>

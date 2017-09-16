@@ -1,0 +1,56 @@
+
+<center>
+<%= image_tag("logo.png", alt: 'Klockren trea', height: '80', class: 'mb-3 mt-3') %>
+</center>
+
+<div class="row" align="left">
+  <% @movies.each do |movie| %>
+    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-6 col-xl-6">
+
+      <div class="bg-light mt-3 movie-wrapper">
+        <%= link_to movie do %>
+          <div class="movie-poster mt-3 ml-3 mr-3 mb-1 list-item">
+            <% if (movie.poster) %>
+              <img src="<%= movie.poster %>" width="150" class="movie-image"/>
+            <% else %>
+              empty
+            <% end %>
+        <% end %>
+            <% if (movie.user) %>
+              <br>
+              &nbsp;Rekomenderad av: <b><%= movie.user %></b>
+              <% else %>
+
+              <% end %>
+          </div>
+
+          <div class="card-body">
+            <h4 class="card-title"><%= movie.title %></h4>
+            <p class="card-text list-item">
+              <b>År: </b><%= movie.year %><br>
+              <b>Längd: </b><%= movie.runtime %><br>
+              <b>Regissör: </b><%= movie.director %><br>
+              <b>IMDB: </b><%= movie.imdb %><br>
+              <b>Metascore: </b><%= movie.metascore %><br>
+              <b>Skådisar: </b><%= movie.actors %><br>
+            </p>
+            <p class="card-text list-item-plot">
+              <%= movie.plot %>
+            </p>
+              <% if (movie.comment) %>
+                <p class="card-text list-item">
+                <b>Kommentar:</b> <%= movie.comment %></p>
+              <% else %>
+
+              <% end %>
+          </div>
+      </div>
+    </div>
+  <% end %>
+</div>
+
+<center>
+<%= link_to 'Lägg till film', new_movie_path, class: 'btn btn-secondary btn-lg mt-4 mb-3' %>
+
+<hr>
+<div class="list-item">&copy; 2017 Maxkungen</div>
