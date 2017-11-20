@@ -8,7 +8,7 @@
     <div class="col-xs-12 col-sm-12 col-md-12 col-lg-6 col-xl-6">
 
       <div class="bg-light mt-3 movie-wrapper">
-        <%= link_to movie do %>
+        <%= link_to view_movie_path(movie) do %>
           <div class="movie-poster mt-3 ml-3 mr-3 mb-1 list-item">
             <% if (movie.poster) %>
               <img src="<%= movie.poster %>" width="150" class="movie-image"/>
@@ -16,12 +16,6 @@
               empty
             <% end %>
         <% end %>
-            <% if (movie.user) %>
-              <br>
-              &nbsp;Rekomenderad av: <b><%= movie.user %></b>
-              <% else %>
-
-              <% end %>
           </div>
 
           <div class="card-body">
@@ -43,6 +37,23 @@
               <% else %>
 
               <% end %>
+              <div>
+                <div class='child-div-1'>
+                  <% if (movie.user) %>
+                    <span class='card-text list-item'>Rekomenderad av: <b><%= movie.user %></b></span>
+                  <% else %>
+
+                  <% end %>
+                </div>
+                <div class='comments-buttons'>
+                  <% if (movie.comments_count) %>
+                    <%= movie.comments_count %> <%= link_to image_tag("chat.png", alt: 'Kommentarer', height: '20'), view_movie_path(movie) %>&nbsp;&nbsp;
+                  <% else %>
+
+                  <% end %>
+                  <%= link_to image_tag("edit.png", alt: 'Kommentera', height: '20'), view_movie_path(movie) %>
+                </div>
+              </div>
           </div>
       </div>
     </div>

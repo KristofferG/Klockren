@@ -1,7 +1,12 @@
 Rails.application.routes.draw do
   get 'welcome/index'
 
-  resources :movies
+  resources :movies do
+    resources :comments
+    member do
+      get 'view'
+    end
+  end
 
   resources :users
 

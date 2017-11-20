@@ -39,7 +39,7 @@
 
 .list-item-plot {
     font-size: 70%;
-    overflow: hidden;
+    /* overflow: hidden; */
     /* font-weight: bold; */
 }
 
@@ -54,4 +54,21 @@
   label {
     margin-right: 20px;
   }
+}
+.child-div-1 {
+  float: left;
+  margin-right: 5px;
+}
+
+.comments-buttons {
+  float: right;
+  padding-bottom: 20px;
+}
+
+input[type=checkbox] {
+
+ -ms-transform: scale(2); /* IE */
+ -moz-transform: scale(2); /* FF */
+ -webkit-transform: scale(2); /* Safari and Chrome */
+  padding: 10px;
 }

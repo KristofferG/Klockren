@@ -1,3 +1,10 @@
+<button type="button" id="myStateButton" data-complete-text="finished!" class="btn btn-primary" autocomplete="off">
+  ...
+</button>
+
+
+
+
 <h3 class="mt-4 mb-4">
   Lägg till en klockren trea
 </h3>
@@ -20,10 +27,13 @@
       <%= f.text_field :comment, placeholder: "Perfekt för en bakisdag", class: 'form-control' %>
     </p>
     <p>
-      <%= f.label :Rekomenderat_av, class: 'control-label form-check btn-group', data: {toggle: 'buttons'}  %>
-
-        <%= f.collection_radio_buttons :user, User.all, :inital, :firstName, class: 'form-check-input btn btn-primary'%>
-    </p>
+        <%= f.label :Rekomenderat_av, class: 'control-label form-check', :"data-toggle" => "buttons" %>
+          <div class="btn-group" data-toggle="buttons">
+            <%= f.collection_radio_buttons :user, User.all, :inital, :firstName, class: 'btn btn-primary' do |b| %>
+              <%= b.label(class: 'btn btn-primary') %>
+              <% end %>
+          </div>
+      </p>
 
 
     <p>

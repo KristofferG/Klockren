@@ -1,0 +1,17 @@
+<%= form_with(model: [ @movie, @movie.comments.build ]) do |form| %>
+  <p>
+    <%= form.text_field :commenter, placeholder: "Ditt namn", class: 'form-control' %>
+  </p>
+
+  <p>
+    <%= form.text_area :body, placeholder: "Feedback", class: 'form-control' %>
+  </p>
+
+  <p>
+    <%= form.label :hyll_han?%>&nbsp; <%= form.check_box :approval, class: '' %>
+
+  </p>
+  <p>
+    <%= form.submit "Posta feedback", class: 'btn btn-primary btn-lg mt-3 mr-4' %>
+  </p>
+<% end %>
